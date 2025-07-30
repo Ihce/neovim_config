@@ -1,5 +1,28 @@
 return {
-  { -- Autoformat
+  {
+    'mason-org/mason.nvim',
+    opts = {},
+  },
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        '<leader>?',
+        function()
+          require('which-key').show { global = false }
+        end,
+        desc = 'Buffer Local Keymaps (which-key)',
+      },
+    },
+  },
+  -- Autoformat
+  {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
@@ -40,4 +63,3 @@ return {
     },
   },
 }
--- vim: ts=2 sts=2 sw=2 et
